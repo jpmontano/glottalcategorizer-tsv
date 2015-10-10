@@ -2,16 +2,16 @@
 
 # Disregarding carons (ǧ, ȟ and ǩ), these are all of the Nishnaabe
 # graphemes:
-# - ' a aa b ch d e g h i ii j k
-# m mb n nd ng nh nj ns ny nz nzh
-# o oo p s sh shk sht sk t w y z zh
+# - ' a aa b ch d e g h i ii j k m mb
+# n nd ng nh nj ns ny nz nzh o oo p
+# s sh shk shp sht sk sp t w y z zh
 #
 #
 # Including carons (ǧ, ȟ and ǩ), these are all of the Nishnaabe
 # graphemes:
-# - ' a aa b ch cȟ d e g ǧ h ȟ i ii j k ǩ
-# m mb n nd ng nǧ nh nȟ nj ns ny nz nzh nzȟ
-# o oo p s sh sȟ shk shǩ sht sk sǩ t w y z zh zȟ
+# - ' a aa b ch cȟ d e g ǧ h ȟ i ii j k ǩ m mb
+# n nd ng nǧ nh nȟ nj ns ny nz nzh nzȟ o oo p
+# s sh sȟ shk shǩ shp sht sk sp sǩ t w y z zh zȟ
 
 
 import csv
@@ -30,16 +30,16 @@ with open(GLOTTALFILENAME, newline='') as fin:
 lhs = [ "'", "([^a]|^)a", "aa", "([^m]|^)b", "ch", "cȟ", "([^n]|^)d", "e",
     "([^n]|^)g", "([^n]|^)ǧ", "[^c|n|s|z]h", "[^c|n|s|z]ȟ", "([^i]|^)i",
     "ii", "([^n]|^)j", "([^s|sh]|^)k", "([^s|sh]|^)ǩ", "m", "mb", "nd",
-    "ng", "nǧ", "nh", "nȟ", "nj", "ns", "ny", "nzh", "nzȟ", "([^o]|^)o",
-    "oo", "p", "sh", "sȟ", "shk", "shǩ", "sht", "sk", "sǩ", "([^sh]|^)t",
-    "w", "([^n]|^)y", "([^n]|^)zh", "([^n]|^)zȟ" ]
+    "ng", "nǧ", "nh", "nȟ", "nj", "ns", "ny", "nzh", "nzȟ", "([^o]|^)o", "oo",
+    "([^sh|s]|^)p", "sh", "sȟ", "shk", "shǩ", "shp", "sht", "sk", "sǩ", "sp",
+    "([^sh]|^)t", "w", "([^n]|^)y", "([^n]|^)zh", "([^n]|^)zȟ" ]
 
 rhs = [ "-", "'", "a([^a]|$)", "aa", "b", "ch", "cȟ", "d", "e", "g",
     "ǧ", "h", "ȟ", "i([^i]|$)", "ii", "j", "k", "ǩ", "m([^b]|$)", "mb",
     "n([^d|g|ǧ|h|ȟ|j|s|y|z|zh|zȟ]|$)", "nd", "ng", "nǧ", "nh", "nȟ",
     "nj", "ns", "ny", "nz([^h|ȟ]|$)", "nzh", "nzȟ", "o([^o]|$)", "oo",
-    "p", "s([^h|ȟ|k|ǩ]|$)", "sh([^k|ǩ|t]|$)", "sȟ", "shk", "shǩ", "sht",
-    "sk", "sǩ", "t", "w", "y", "z([^h|ȟ]|$)", "zh", "zȟ" ]
+    "p", "s([^h|ȟ|k|ǩ|p]|$)", "sh([^k|ǩ|t|p]|$)", "sȟ", "shk", "shǩ", "shp",
+    "sht", "sk", "sǩ", "sp", "t", "w", "y", "z([^h|ȟ]|$)", "zh", "zȟ" ]
 
 glottals = [ "h", "ȟ" ]
 
